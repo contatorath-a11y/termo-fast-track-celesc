@@ -1,0 +1,773 @@
+<title>Termo de Aceite Fast Track</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/jpeg;base64,__LOGO_B64__">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: bancada em duas colunas — etapas à esquerda, página do termo fixa à direita; empilha no celular */
+:root {
+  --bg: #f2f4f8;
+  --surface: #ffffff;
+  --ink: #131926;
+  --muted: #586276;
+  --line: #d6dce8;
+  --well: #e3e8f1;
+  --orange: #d56a1c;
+  --orange-strong: #b9560f;
+  --on-orange: #ffffff;
+  --blue: #1a50a8;
+  --blue-soft: #e5edfa;
+  --ok: #17784a;
+  --ok-soft: #e3f3ea;
+  --warn: #9a520a;
+  --warn-soft: #fbf0e1;
+  --err: #b42318;
+  --err-soft: #fbe7e5;
+  --paper-shadow: 0 1px 2px rgba(19,25,38,.08), 0 8px 24px rgba(19,25,38,.10);
+  --f-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e121a; --surface: #161c27; --ink: #e7ebf2; --muted: #9ba5b8; --line: #283246; --well: #0a0d13;
+    --orange: #ee8a3f; --orange-strong: #f29d5c; --on-orange: #1b0e03; --blue: #79a3ec; --blue-soft: #1a2740;
+    --ok: #5fcf96; --ok-soft: #12291e; --warn: #f0b062; --warn-soft: #2d2010; --err: #f2867c; --err-soft: #2e1513;
+    --paper-shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 30px rgba(0,0,0,.45);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e121a; --surface: #161c27; --ink: #e7ebf2; --muted: #9ba5b8; --line: #283246; --well: #0a0d13;
+  --orange: #ee8a3f; --orange-strong: #f29d5c; --on-orange: #1b0e03; --blue: #79a3ec; --blue-soft: #1a2740;
+  --ok: #5fcf96; --ok-soft: #12291e; --warn: #f0b062; --warn-soft: #2d2010; --err: #f2867c; --err-soft: #2e1513;
+  --paper-shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 30px rgba(0,0,0,.45);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* ---------- topo ---------- */
+.top {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.top::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
+  background: linear-gradient(90deg, #d56a1c 0%, #745e61 50%, #1a50a8 100%);
+}
+.top-in {
+  max-width: 1200px; margin: 0 auto;
+  padding-block: 14px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.logo { width: 46px; height: 46px; border-radius: 11px; flex: none; display: block; }
+.brand { min-width: 0; flex: 1 1 260px; }
+.brand h1 {
+  margin: 0; font-family: var(--f-display); font-stretch: 87.5%; font-weight: 750;
+  font-size: 1.45rem; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance;
+}
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: .9rem; }
+.ghost {
+  border: 1px solid var(--line); background: transparent; border-radius: 8px;
+  padding: 7px 12px; cursor: pointer; font-weight: 600; font-size: .88rem; color: var(--muted);
+}
+.ghost:hover { color: var(--ink); border-color: var(--muted); }
+
+/* ---------- bancada ---------- */
+.wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding-block: 24px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 24px;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 960px) {
+  .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 430px); gap: 32px; align-items: start; }
+  .preview { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+}
+
+.steps { display: grid; gap: 16px; min-width: 0; }
+.step {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 18px 18px 20px; display: grid; gap: 14px; min-width: 0;
+}
+.step-h { display: flex; gap: 12px; align-items: flex-start; }
+.num {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 750; font-size: .9rem;
+  border: 1.5px solid var(--line); color: var(--muted); background: var(--bg);
+}
+.step.done .num { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.step-h h2 {
+  margin: 0; font-family: var(--f-display); font-stretch: 87.5%; font-weight: 700;
+  font-size: 1.12rem; line-height: 1.25; text-wrap: balance;
+}
+.step-h p { margin: 2px 0 0; color: var(--muted); font-size: .9rem; max-width: 62ch; }
+
+/* área de anexo */
+.drop {
+  position: relative; display: flex; align-items: center; gap: 14px;
+  border: 1.5px dashed var(--line); border-radius: var(--r); background: var(--bg);
+  padding: 16px; cursor: pointer; transition: border-color .15s, background .15s;
+  min-width: 0;
+}
+.drop:hover, .drop.over { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 6%, var(--bg)); }
+.drop:focus-within { border-color: var(--blue); }
+.drop input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.drop-ico {
+  flex: none; width: 40px; height: 48px; border-radius: 4px 12px 4px 4px;
+  border: 1.5px solid var(--muted); position: relative; color: var(--muted);
+  display: grid; place-items: end center; padding-bottom: 6px;
+  font: 700 .62rem/1 var(--f-mono); letter-spacing: .04em;
+}
+.drop-txt { min-width: 0; }
+.drop-txt strong { display: block; font-weight: 600; }
+.drop-txt span { color: var(--muted); font-size: .88rem; }
+.drop-btn {
+  margin-left: auto; flex: none; border-radius: 8px; padding: 8px 14px; font-weight: 600; font-size: .9rem;
+  background: var(--surface); border: 1px solid var(--line);
+}
+@media (max-width: 520px) { .drop-btn { display: none; } }
+
+.status {
+  display: flex; gap: 10px; align-items: flex-start; border-radius: 8px; padding: 10px 12px;
+  font-size: .9rem; background: var(--bg); border: 1px solid var(--line); min-width: 0;
+}
+.status[data-kind="ok"] { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+.status[data-kind="warn"] { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
+.status[data-kind="err"] { background: var(--err-soft); border-color: transparent; color: var(--err); }
+.status .file { color: var(--ink); font-weight: 600; overflow-wrap: anywhere; }
+.status .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: currentColor; margin-top: .45em; }
+
+/* campos */
+.fields { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .fields { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); } }
+.field { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.field-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.field label { font-weight: 600; font-size: .9rem; }
+.src {
+  font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap;
+}
+.src[data-kind="trt"] { color: var(--ok); }
+.src[data-kind="proc"] { color: var(--blue); }
+.src[data-kind="manual"] { color: var(--orange-strong); }
+.field input {
+  width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  padding: 10px 12px; font-size: 1rem; min-width: 0;
+}
+.field input:focus { border-color: var(--blue); outline: none; box-shadow: 0 0 0 3px var(--blue-soft); }
+#uc { font-family: var(--f-mono); font-weight: 600; letter-spacing: .03em; font-variant-numeric: tabular-nums; }
+.alts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .8rem; color: var(--muted); }
+.chip {
+  border: 1px solid var(--line); background: var(--bg); border-radius: 999px;
+  padding: 3px 10px; cursor: pointer; font-size: .82rem; color: var(--ink); max-width: 100%;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.chip small { color: var(--muted); margin-left: 4px; }
+.chip:hover { border-color: var(--blue); }
+.chip.mono { font-family: var(--f-mono); }
+
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.fact {
+  display: inline-flex; gap: 6px; align-items: baseline; border-radius: 6px; padding: 4px 9px;
+  background: var(--bg); border: 1px solid var(--line); font-size: .82rem; max-width: 100%; min-width: 0;
+}
+.fact b { font-weight: 600; color: var(--muted); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; flex: none; }
+.fact span { overflow-wrap: anywhere; }
+.fact.ok { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+.fact.ok b { color: inherit; }
+.fact.warn { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
+.fact.warn b { color: inherit; }
+
+details.raw { border-top: 1px solid var(--line); padding-top: 10px; }
+details.raw summary { cursor: pointer; color: var(--muted); font-size: .86rem; font-weight: 600; }
+details.raw pre {
+  margin: 10px 0 0; max-height: 240px; overflow: auto; background: var(--bg); border: 1px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; font: 500 .76rem/1.55 var(--f-mono); white-space: pre-wrap; overflow-wrap: anywhere;
+}
+
+/* lista de anexos */
+.files { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.files li {
+  display: flex; align-items: center; gap: 10px; padding: 9px 10px 9px 12px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--surface); min-width: 0;
+}
+.tag {
+  flex: none; font: 600 .68rem/1 var(--f-mono); letter-spacing: .04em; padding: 4px 6px; border-radius: 4px;
+  background: var(--blue-soft); color: var(--blue);
+}
+.files .name { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+.files .meta { color: var(--muted); font-size: .82rem; flex: none; font-variant-numeric: tabular-nums; }
+.icon-btn {
+  flex: none; width: 30px; height: 30px; border-radius: 6px; border: 1px solid transparent; background: transparent;
+  cursor: pointer; color: var(--muted); display: grid; place-items: center; font-size: 1.1rem; line-height: 1;
+}
+.icon-btn:hover:not(:disabled) { border-color: var(--line); color: var(--ink); }
+.icon-btn:disabled { opacity: .35; cursor: default; }
+.note { margin: 0; color: var(--muted); font-size: .82rem; max-width: 70ch; }
+
+/* gerar */
+.summary { display: grid; gap: 4px; font-size: .92rem; }
+.summary .fname { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); overflow-wrap: anywhere; }
+.actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.primary {
+  border: 0; border-radius: 9px; padding: 12px 20px; cursor: pointer; font-weight: 700; font-size: 1rem;
+  background: var(--orange); color: var(--on-orange); display: inline-flex; gap: 10px; align-items: center;
+}
+.primary:hover:not(:disabled) { background: var(--orange-strong); }
+.primary:disabled { opacity: .45; cursor: not-allowed; }
+.hint { color: var(--muted); font-size: .86rem; }
+.toast { font-size: .9rem; }
+
+/* pré-visualização */
+.preview { display: grid; gap: 10px; min-width: 0; }
+.pv-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pv-head h2 {
+  margin: 0; font-family: var(--f-display); font-stretch: 87.5%; font-weight: 700; font-size: 1rem;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+}
+.pager { display: flex; align-items: center; gap: 4px; font-size: .86rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.well {
+  background: var(--well); border-radius: var(--r); padding: 18px; display: grid; place-items: center;
+}
+.paper {
+  width: 100%; max-width: 100%; aspect-ratio: 595 / 842; background: #ffffff; box-shadow: var(--paper-shadow);
+  position: relative; overflow: hidden;
+}
+.paper.land { aspect-ratio: 842 / 595; }
+.paper canvas { width: 100%; height: 100%; display: block; }
+.pv-cap { margin: 0; color: var(--muted); font-size: .82rem; text-align: center; }
+
+.spin { width: 16px; height: 16px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; animation: r .7s linear infinite; flex: none; }
+@keyframes r { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation-duration: 2s; } .drop { transition: none; } }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <img class="logo" src="data:image/jpeg;base64,__LOGO_B64__" alt="Solturi">
+    <div class="brand">
+      <h1>Termo de Aceite Fast Track</h1>
+      <p>Celesc · microgeração até 7,5 kW · preenche o termo com a TRT e junta a procuração</p>
+    </div>
+    <button class="ghost" id="reset" type="button">Começar outro termo</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="steps">
+
+    <section class="step" id="s1" aria-labelledby="s1h">
+      <div class="step-h">
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h2 id="s1h">Solicitação de TRT</h2>
+          <p>Anexe o PDF da solicitação de TRT. A ferramenta lê o arquivo e busca o número da UC e o nome do contratante.</p>
+        </div>
+      </div>
+      <label class="drop" id="trtDrop" for="trtFile">
+        <input id="trtFile" type="file" accept="application/pdf,.pdf">
+        <span class="drop-ico" aria-hidden="true">PDF</span>
+        <span class="drop-txt"><strong>Anexar solicitação de TRT</strong><span>Clique ou arraste o arquivo aqui</span></span>
+        <span class="drop-btn" aria-hidden="true">Escolher arquivo</span>
+      </label>
+      <div class="status" id="trtStatus" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="step" id="s2" aria-labelledby="s2h">
+      <div class="step-h">
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h2 id="s2h">Dados do termo</h2>
+          <p>Confira o que foi lido. Você pode corrigir os campos ou escolher outra opção encontrada no arquivo.</p>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <div class="field-top"><label for="uc">Número da UC</label><span class="src" id="ucSrc"></span></div>
+          <input id="uc" type="text" inputmode="numeric" autocomplete="off" placeholder="Preenchido ao ler a TRT">
+          <div class="alts" id="ucAlts" hidden></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="nome">Nome</label><span class="src" id="nomeSrc"></span></div>
+          <input id="nome" type="text" autocomplete="off" placeholder="Preenchido ao ler a TRT">
+          <div class="alts" id="nomeAlts" hidden></div>
+        </div>
+      </div>
+      <div class="facts" id="facts" hidden></div>
+      <details class="raw" id="raw" hidden>
+        <summary id="rawSum">Texto lido da TRT</summary>
+        <pre id="rawText"></pre>
+      </details>
+    </section>
+
+    <section class="step" id="s3" aria-labelledby="s3h">
+      <div class="step-h">
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h2 id="s3h">Procuração</h2>
+          <p>Anexe a procuração em PDF ou foto (JPG ou PNG). Se tiver mais de um arquivo, anexe todos na ordem.</p>
+        </div>
+      </div>
+      <label class="drop" id="procDrop" for="procFile">
+        <input id="procFile" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple>
+        <span class="drop-ico" aria-hidden="true">PDF</span>
+        <span class="drop-txt"><strong>Anexar procuração</strong><span>PDF, JPG ou PNG · clique ou arraste aqui</span></span>
+        <span class="drop-btn" aria-hidden="true">Escolher arquivo</span>
+      </label>
+      <ul class="files" id="procList" hidden></ul>
+      <div class="status" id="procStatus" role="status" aria-live="polite" hidden></div>
+      <p class="note">Procurações com assinatura digital (gov.br) mantêm a assinatura visível nas páginas, mas a validação digital fica só no arquivo original.</p>
+    </section>
+
+    <section class="step" id="s4" aria-labelledby="s4h">
+      <div class="step-h">
+        <span class="num" aria-hidden="true">4</span>
+        <div>
+          <h2 id="s4h">PDF único</h2>
+          <p>O termo preenchido vem primeiro, seguido da procuração.</p>
+        </div>
+      </div>
+      <div class="summary" id="summary"></div>
+      <div class="actions">
+        <button class="primary" id="go" type="button" disabled>Baixar PDF</button>
+        <span class="hint" id="goHint"></span>
+      </div>
+      <div class="status toast" id="toast" role="status" aria-live="polite" hidden></div>
+    </section>
+  </div>
+
+  <aside class="preview" aria-label="Pré-visualização">
+    <div class="pv-head">
+      <h2>Pré-visualização</h2>
+      <div class="pager">
+        <button class="icon-btn" id="prev" type="button" aria-label="Página anterior">&#8249;</button>
+        <span id="pageLbl">1 / 1</span>
+        <button class="icon-btn" id="next" type="button" aria-label="Próxima página">&#8250;</button>
+      </div>
+    </div>
+    <div class="well">
+      <div class="paper" id="paper"><canvas id="cv" aria-label="Página do PDF"></canvas></div>
+    </div>
+    <p class="pv-cap" id="pvCap">Termo de aceite</p>
+  </aside>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script>
+/*__CORE__*/
+</script>
+<script>
+(() => {
+  const TERMO_B64 = "__TERMO_B64__";
+  const $ = id => document.getElementById(id);
+  const b64 = s => { const bin = atob(s); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; };
+  const TEMPLATE = b64(TERMO_B64);
+  const pdfjs = window.pdfjsLib;
+  const LIMITE_KW = 7.5;
+  if (pdfjs) pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  // Dentro do claude.ai o download passa pela confirmação do visualizador; fora dele (GitHub Pages, arquivo local) usa o download normal do navegador.
+  const inViewer = !!(window.claude && typeof window.claude.use === "function");
+  const downloadsP = inViewer ? window.claude.use("downloads").catch(() => null) : Promise.resolve(null);
+
+  const st = {
+    trt: null,            // { name, pages, lines, res }
+    procs: [],            // { id, name, kind:"pdf"|"jpg"|"png", bytes, pages, doc?, bmp?, res? }
+    uc: { value: "", src: "", kind: "" },
+    nome: { value: "", src: "", kind: "" },
+    termoDoc: null,
+    page: 0,
+  };
+  let seq = 0;
+
+  // Fontes padrão do PDF (Times, Helvetica, Courier) embutidas para a pré-visualização desenhar o texto sem buscar nada na rede.
+  const STD_FONTS = __STD_FONTS__;
+  class EmbeddedFontData {
+    constructor() {}
+    async fetch({ filename }) {
+      if (!STD_FONTS[filename]) throw new Error("Fonte não incluída: " + filename);
+      return b64(STD_FONTS[filename]);
+    }
+  }
+  const pdfOpts = bytes => ({ data: bytes.slice(0), isEvalSupported: false, disableFontFace: true, useSystemFonts: false, StandardFontDataFactory: EmbeddedFontData });
+  const isPdf = f => f.type === "application/pdf" || /\.pdf$/i.test(f.name);
+  const isImg = f => /^image\/(jpeg|png|webp)$/.test(f.type) || /\.(jpe?g|png|webp)$/i.test(f.name);
+  const kb = n => n > 1048576 ? (n / 1048576).toFixed(1).replace(".", ",") + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+  const pl = (n, a, b) => n + " " + (n === 1 ? a : b);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function setStatus(el, kind, html) {
+    if (!kind) { el.hidden = true; el.innerHTML = ""; return; }
+    el.hidden = false; el.dataset.kind = kind;
+    el.innerHTML = (kind === "busy" ? '<span class="spin" aria-hidden="true"></span>' : '<span class="dot" aria-hidden="true"></span>') + "<span>" + html + "</span>";
+  }
+
+  /* ---------- anexos: arrastar e soltar ---------- */
+  function wireDrop(drop, input, handler) {
+    input.addEventListener("change", () => { if (input.files.length) handler([...input.files]); input.value = ""; });
+    ["dragenter", "dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+    ["dragleave", "drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+    drop.addEventListener("drop", e => { const fs = [...(e.dataTransfer?.files || [])]; if (fs.length) handler(fs); });
+  }
+
+  /* ---------- 1. TRT ---------- */
+  async function onTrt(files) {
+    const f = files[0];
+    if (!isPdf(f)) { setStatus($("trtStatus"), "err", "Esse arquivo não é PDF. Anexe a solicitação de TRT em PDF."); return; }
+    if (!pdfjs) { setStatus($("trtStatus"), "err", "O leitor de PDF não carregou. Recarregue a página e tente de novo."); return; }
+    setStatus($("trtStatus"), "busy", "Lendo <span class='file'>" + esc(f.name) + "</span>…");
+    try {
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      const lines = await FT.pdfLines(pdfjs, bytes);
+      const res = FT.extract(lines, "TRT", 0);
+      st.trt = { name: f.name, lines, res };
+      st.uc.kind === "manual" || (st.uc = { value: "", src: "", kind: "" });
+      st.nome.kind === "manual" || (st.nome = { value: "", src: "", kind: "" });
+      applyFound();
+      const got = [];
+      if (res.ucs.length) got.push("UC"); if (res.names.length) got.push("nome");
+      const name = "<span class='file'>" + esc(f.name) + "</span>";
+      if (!lines.length) setStatus($("trtStatus"), "warn", name + " não tem texto legível (parece digitalizado). Digite a UC e o nome no passo 2.");
+      else if (got.length === 2) setStatus($("trtStatus"), "ok", name + " lido. UC e nome encontrados.");
+      else if (got.length === 1) setStatus($("trtStatus"), "warn", name + " lido. Encontrei só " + (got[0] === "UC" ? "a UC" : "o nome") + "; complete o outro campo no passo 2.");
+      else setStatus($("trtStatus"), "warn", name + " lido, mas não achei UC nem nome. Preencha no passo 2 e confira o texto lido.");
+      $("s1").classList.add("done");
+    } catch (e) {
+      console.error(e);
+      setStatus($("trtStatus"), "err", "Não consegui ler <span class='file'>" + esc(f.name) + "</span>. Confira se o PDF abre normalmente e não tem senha.");
+    }
+  }
+
+  /* candidatos combinados: TRT primeiro, procuração como reforço */
+  function pool(key) {
+    const all = [];
+    if (st.trt) st.trt.res[key].forEach(c => all.push({ ...c, kind: "trt" }));
+    st.procs.forEach(p => p.res && p.res[key].forEach(c => all.push({ ...c, kind: "proc", score: c.score - 3 })));
+    const seen = new Map();
+    all.sort((a, b) => b.score - a.score);
+    all.forEach(c => { if (!seen.has(c.key)) seen.set(c.key, c); });
+    return [...seen.values()];
+  }
+  const srcLabel = c => (c.kind === "trt" ? "da TRT" : "da procuração") + " · " + c.src;
+
+  function applyFound() {
+    const ucs = pool("ucs"), names = pool("names");
+    if (st.uc.kind !== "manual" && ucs[0] && st.uc.value !== ucs[0].value) st.uc = { value: ucs[0].value, src: srcLabel(ucs[0]), kind: ucs[0].kind };
+    if (st.nome.kind !== "manual" && names[0] && st.nome.value !== names[0].value) st.nome = { value: names[0].value, src: srcLabel(names[0]), kind: names[0].kind };
+    renderFields();
+    renderFacts();
+    schedulePreview();
+  }
+
+  function renderFields() {
+    for (const k of ["uc", "nome"]) {
+      const inp = $(k);
+      if (inp.value !== st[k].value) inp.value = st[k].value;
+      const s = $(k + "Src");
+      s.textContent = st[k].kind === "manual" ? "editado" : st[k].src;
+      s.dataset.kind = st[k].kind;
+    }
+    const alt = (boxId, list, cur, field, mono) => {
+      const box = $(boxId);
+      const others = list.filter(c => c.value !== cur).slice(0, 5);
+      box.hidden = !others.length;
+      box.innerHTML = others.length ? "<span>Também encontrado:</span>" : "";
+      others.forEach(c => {
+        const b = document.createElement("button");
+        b.type = "button"; b.className = "chip" + (mono ? " mono" : "");
+        b.innerHTML = esc(c.value) + "<small>" + esc(c.rt ? "resp. técnico" : (c.kind === "proc" ? "procuração" : c.src)) + "</small>";
+        b.title = "Usar " + c.value;
+        b.addEventListener("click", () => {
+          st[field] = { value: c.value, src: c.rt ? "da TRT · Responsável técnico" : srcLabel(c), kind: c.kind };
+          renderFields(); schedulePreview();
+        });
+        box.appendChild(b);
+      });
+    };
+    alt("ucAlts", pool("ucs"), st.uc.value, "uc", true);
+    const rts = st.trt ? st.trt.res.rtNames.map(c => ({ ...c, kind: "trt", rt: true })) : [];
+    alt("nomeAlts", pool("names").concat(rts.filter(r => !pool("names").some(n => n.key === r.key))), st.nome.value, "nome", false);
+    renderSummary();
+  }
+
+  function renderFacts() {
+    const box = $("facts");
+    box.innerHTML = "";
+    const r = st.trt && st.trt.res;
+    if (!r) { box.hidden = true; $("raw").hidden = true; return; }
+    const add = (cls, label, val) => {
+      const d = document.createElement("span");
+      d.className = "fact" + (cls ? " " + cls : "");
+      d.innerHTML = "<b>" + esc(label) + "</b><span>" + esc(val) + "</span>";
+      box.appendChild(d);
+    };
+    if (r.trt) add("", "TRT", r.trt);
+    if (r.cpf) add("", "CPF/CNPJ", r.cpf);
+    if (r.potencias.length) {
+      const max = Math.max(...r.potencias.map(p => p.val));
+      const txt = r.potencias.map(p => p.txt).join(" · ");
+      if (max > LIMITE_KW) add("warn", "Potência", txt + " — acima de 7,5 kW, confira se cabe no fast track");
+      else add("ok", "Potência", txt + " — dentro do limite de 7,5 kW");
+    }
+    box.hidden = !box.children.length;
+    $("raw").hidden = false;
+    $("rawSum").textContent = "Texto lido da TRT (" + pl(st.trt.lines.length, "linha", "linhas") + ")";
+    $("rawText").textContent = st.trt.lines.length ? st.trt.lines.join("\n") : "Nenhum texto encontrado no arquivo.";
+  }
+
+  ["uc", "nome"].forEach(k => {
+    $(k).addEventListener("input", e => {
+      st[k] = { value: e.target.value, src: "", kind: e.target.value ? "manual" : "" };
+      const s = $(k + "Src"); s.textContent = st[k].kind ? "editado" : ""; s.dataset.kind = st[k].kind;
+      renderSummary(); schedulePreview();
+    });
+  });
+
+  /* ---------- 3. procuração ---------- */
+  async function toPng(file) {
+    const bmp = await createImageBitmap(file);
+    const c = document.createElement("canvas"); c.width = bmp.width; c.height = bmp.height;
+    c.getContext("2d").drawImage(bmp, 0, 0);
+    const blob = await new Promise(r => c.toBlob(r, "image/png"));
+    return { bytes: new Uint8Array(await blob.arrayBuffer()), bmp };
+  }
+
+  async function onProc(files) {
+    const bad = files.filter(f => !isPdf(f) && !isImg(f));
+    const ok = files.filter(f => isPdf(f) || isImg(f));
+    if (!ok.length) { setStatus($("procStatus"), "err", "Formato não aceito. Use PDF, JPG ou PNG."); return; }
+    setStatus($("procStatus"), "busy", "Lendo " + pl(ok.length, "arquivo", "arquivos") + "…");
+    const fails = [];
+    for (const f of ok) {
+      try {
+        const item = { id: ++seq, name: f.name, size: f.size };
+        if (isPdf(f)) {
+          item.kind = "pdf";
+          item.bytes = new Uint8Array(await f.arrayBuffer());
+          await PDFLib.PDFDocument.load(item.bytes, { ignoreEncryption: true }); // valida para a união
+          item.doc = await pdfjs.getDocument(pdfOpts(item.bytes)).promise;
+          item.pages = item.doc.numPages;
+          try { item.res = FT.extract(await FT.pdfLines(pdfjs, item.bytes), "procuração", 0); } catch { item.res = null; }
+        } else {
+          const isJpg = f.type === "image/jpeg" || /\.jpe?g$/i.test(f.name);
+          const isPng = f.type === "image/png" || /\.png$/i.test(f.name);
+          if (isJpg || isPng) {
+            item.kind = isJpg ? "jpg" : "png";
+            item.bytes = new Uint8Array(await f.arrayBuffer());
+            item.bmp = await createImageBitmap(f);
+          } else {
+            const r = await toPng(f); item.kind = "png"; item.bytes = r.bytes; item.bmp = r.bmp;
+          }
+          item.pages = 1;
+        }
+        st.procs.push(item);
+      } catch (e) { console.error(e); fails.push(f.name); }
+    }
+    const msgs = [];
+    if (fails.length) msgs.push("Não consegui abrir: " + fails.map(esc).join(", ") + ". Confira se o arquivo não está corrompido ou com senha.");
+    if (bad.length) msgs.push("Ignorado (formato não aceito): " + bad.map(f => esc(f.name)).join(", ") + ".");
+    setStatus($("procStatus"), msgs.length ? (fails.length ? "err" : "warn") : "", msgs.join(" "));
+    renderProcs(); applyFound();
+  }
+
+  function renderProcs() {
+    const ul = $("procList");
+    ul.innerHTML = "";
+    st.procs.forEach((p, i) => {
+      const li = document.createElement("li");
+      li.innerHTML = '<span class="tag">' + (p.kind === "pdf" ? "PDF" : "IMG") + '</span>'
+        + '<span class="name" title="' + esc(p.name) + '">' + esc(p.name) + '</span>'
+        + '<span class="meta">' + pl(p.pages, "pág.", "págs.") + "</span>";
+      const mk = (txt, label, dis, fn) => { const b = document.createElement("button"); b.type = "button"; b.className = "icon-btn"; b.innerHTML = txt; b.setAttribute("aria-label", label + " " + p.name); b.disabled = dis; b.addEventListener("click", fn); li.appendChild(b); };
+      mk("&#8593;", "Subir", i === 0, () => { st.procs.splice(i - 1, 0, st.procs.splice(i, 1)[0]); renderProcs(); schedulePreview(); });
+      mk("&#8595;", "Descer", i === st.procs.length - 1, () => { st.procs.splice(i + 1, 0, st.procs.splice(i, 1)[0]); renderProcs(); schedulePreview(); });
+      mk("&#215;", "Remover", false, () => { const [r] = st.procs.splice(i, 1); r.doc && r.doc.destroy(); renderProcs(); applyFound(); });
+      ul.appendChild(li);
+    });
+    ul.hidden = !st.procs.length;
+    $("s3").classList.toggle("done", st.procs.length > 0);
+    renderSummary();
+  }
+
+  /* ---------- 4. resumo e download ---------- */
+  const procPages = () => st.procs.reduce((n, p) => n + p.pages, 0);
+  function renderSummary() {
+    const uc = st.uc.value.trim(), nome = st.nome.value.trim();
+    const pp = procPages();
+    $("s2").classList.toggle("done", !!(uc && nome));
+    $("summary").innerHTML = "<span>Termo preenchido (1 pág.)" + (pp ? " + procuração (" + pl(pp, "pág.", "págs.") + ")" : "") + " = <strong>" + pl(1 + pp, "página", "páginas") + "</strong></span>"
+      + '<span class="fname">' + esc(FT.fileName(uc, nome)) + "</span>";
+    const go = $("go");
+    go.disabled = !(uc && nome);
+    $("goHint").textContent = !uc && !nome ? "Preencha a UC e o nome no passo 2."
+      : !uc ? "Falta o número da UC." : !nome ? "Falta o nome."
+      : !pp ? "Nenhuma procuração anexada: o PDF terá só o termo." : "";
+    renderPager();
+  }
+
+  async function buildFinal() {
+    const termo = await FT.buildTermo(PDFLib, TEMPLATE, { uc: st.uc.value, nome: st.nome.value });
+    const parts = [{ kind: "pdf", bytes: termo }].concat(st.procs.map(p => ({ kind: p.kind, bytes: p.bytes })));
+    return FT.merge(PDFLib, parts, { title: "Termo de Aceite Fast Track - UC " + st.uc.value.trim() });
+  }
+
+  $("go").addEventListener("click", async () => {
+    const go = $("go"), toast = $("toast");
+    go.disabled = true; const label = go.textContent; go.innerHTML = '<span class="spin" aria-hidden="true"></span>Gerando…';
+    setStatus(toast, "");
+    try {
+      const bytes = await buildFinal();
+      const filename = FT.fileName(st.uc.value.trim(), st.nome.value.trim());
+      const blob = new Blob([bytes], { type: "application/pdf" });
+      const dl = await downloadsP;
+      if (dl) {
+        try {
+          await dl.save({ filename, data: blob });
+          setStatus(toast, "ok", "PDF salvo: <span class='file'>" + esc(filename) + "</span> (" + kb(bytes.length) + ").");
+          $("s4").classList.add("done");
+        } catch (e) {
+          const code = e && e.code;
+          if (code === "declined") setStatus(toast, "warn", "Download cancelado. Clique em Baixar PDF para tentar de novo.");
+          else if (code === "rate_limited") setStatus(toast, "warn", "Já existe um pedido de download aberto. Responda a ele e tente de novo.");
+          else if (code === "too_large") setStatus(toast, "err", "O PDF ficou grande demais (" + kb(bytes.length) + "). Use uma procuração com resolução menor.");
+          else setStatus(toast, "err", "Esta visualização não permite baixar arquivos. Abra a ferramenta pelo link no claude.ai.");
+        }
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a"); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 60000);
+        setStatus(toast, "ok", "Download iniciado: <span class='file'>" + esc(filename) + "</span>." + (inViewer ? " Se nada acontecer, abra a ferramenta pelo link no claude.ai." : ""));
+      }
+    } catch (e) {
+      console.error(e);
+      setStatus(toast, "err", "Não consegui montar o PDF. Remova e anexe de novo a procuração; se persistir, ela pode estar protegida por senha.");
+    } finally {
+      go.textContent = label; renderSummary();
+    }
+  });
+
+  /* ---------- pré-visualização ---------- */
+  function pageList() {
+    const list = [{ type: "termo", cap: "Termo de aceite preenchido" }];
+    st.procs.forEach(p => {
+      for (let i = 0; i < p.pages; i++) list.push({ type: p.kind === "pdf" ? "pdf" : "img", p, i, cap: "Procuração · " + p.name + (p.pages > 1 ? " · pág. " + (i + 1) : "") });
+    });
+    return list;
+  }
+  function renderPager() {
+    const n = pageList().length;
+    if (st.page > n - 1) st.page = n - 1;
+    $("pageLbl").textContent = (st.page + 1) + " / " + n;
+    $("prev").disabled = st.page === 0;
+    $("next").disabled = st.page >= n - 1;
+  }
+  $("prev").addEventListener("click", () => { if (st.page > 0) { st.page--; renderPreview(); } });
+  $("next").addEventListener("click", () => { st.page++; renderPreview(); });
+
+  let pvTimer = null, termoDirty = true, renderTask = null, drawSeq = 0;
+  function schedulePreview() {
+    termoDirty = true;
+    clearTimeout(pvTimer);
+    pvTimer = setTimeout(renderPreview, 220);
+  }
+
+  async function drawPdfPage(doc, index, mySeq) {
+    const page = await doc.getPage(index + 1);
+    if (mySeq !== drawSeq) return;
+    const base = page.getViewport({ scale: 1 });
+    const paper = $("paper");
+    paper.classList.toggle("land", base.width > base.height);
+    const cv = $("cv");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    const scale = (paper.clientWidth * dpr) / base.width;
+    const vp = page.getViewport({ scale });
+    if (renderTask) { try { renderTask.cancel(); } catch {} }
+    cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+    const ctx = cv.getContext("2d");
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, cv.width, cv.height);
+    renderTask = page.render({ canvasContext: ctx, viewport: vp });
+    try { await renderTask.promise; } catch (e) { if (e && e.name !== "RenderingCancelledException") throw e; }
+  }
+
+  function drawImage(bmp) {
+    const land = bmp.width > bmp.height;
+    const paper = $("paper"); paper.classList.toggle("land", land);
+    const cv = $("cv");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    const W = Math.round(paper.clientWidth * dpr), H = Math.round(W * (land ? 595 / 842 : 842 / 595));
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, H);
+    const m = 24 / (land ? 842 : 595) * W;
+    const sc = Math.min((W - 2 * m) / bmp.width, (H - 2 * m) / bmp.height);
+    const w = bmp.width * sc, h = bmp.height * sc;
+    ctx.drawImage(bmp, (W - w) / 2, (H - h) / 2, w, h);
+  }
+
+  async function renderPreview() {
+    if (!pdfjs) { $("pvCap").textContent = "O leitor de PDF não carregou. Recarregue a página."; return; }
+    renderPager();
+    const mySeq = ++drawSeq;
+    const item = pageList()[st.page];
+    $("pvCap").textContent = item.cap;
+    try {
+      if (item.type === "termo") {
+        if (termoDirty || !st.termoDoc) {
+          termoDirty = false;
+          const bytes = await FT.buildTermo(PDFLib, TEMPLATE, { uc: st.uc.value, nome: st.nome.value });
+          const doc = await pdfjs.getDocument(pdfOpts(bytes)).promise;
+          if (st.termoDoc) st.termoDoc.destroy();
+          st.termoDoc = doc;
+        }
+        if (mySeq !== drawSeq) return;
+        await drawPdfPage(st.termoDoc, 0, mySeq);
+      } else if (item.type === "pdf") {
+        await drawPdfPage(item.p.doc, item.i, mySeq);
+      } else {
+        drawImage(item.p.bmp);
+      }
+    } catch (e) { console.error(e); }
+  }
+  let rz = null;
+  window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(renderPreview, 200); });
+
+  /* ---------- recomeçar ---------- */
+  $("reset").addEventListener("click", () => {
+    st.procs.forEach(p => p.doc && p.doc.destroy());
+    st.trt = null; st.procs = []; st.page = 0;
+    st.uc = { value: "", src: "", kind: "" }; st.nome = { value: "", src: "", kind: "" };
+    ["trtStatus", "procStatus", "toast"].forEach(id => setStatus($(id), ""));
+    ["s1", "s2", "s3", "s4"].forEach(id => $(id).classList.remove("done"));
+    renderFields(); renderFacts(); renderProcs(); schedulePreview();
+    window.scrollTo({ top: 0 });
+  });
+
+  wireDrop($("trtDrop"), $("trtFile"), onTrt);
+  wireDrop($("procDrop"), $("procFile"), onProc);
+  renderFields(); renderSummary(); renderPreview();
+})();
+</script>
